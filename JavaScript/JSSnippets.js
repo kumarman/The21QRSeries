@@ -6,6 +6,7 @@
 /**
  * Declaration and Data Type
  */
+ //TRY TO WRITE WITH MAX LINE WIDTH OF 55
 var dataType = function() {
 	"use strict";
 
@@ -57,7 +58,6 @@ var equality = () => {
 
 	console.log(NaN === NaN); // prints false
 	console.log(Object.is(NaN, NaN)); //prints true
-
 };
 
 /**

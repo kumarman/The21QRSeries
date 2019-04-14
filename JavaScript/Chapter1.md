@@ -10,5 +10,5 @@ JavaScript conforms to ECMAScript specification.
 
 JS runs in a single threaded environment. Call stack, heap memory and event queue are mainly 3 parts of JS engine. Event queue helps in writing a non-blocking asynchronous code.
 
-![How JavaScript works?](images/HowJSWorks_2.png "How JavaScript works?"){width=100%}
+![Figure 1: How JavaScript works?](images/HowJSWorks_2.png){width=100%}
 

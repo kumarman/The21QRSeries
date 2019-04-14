@@ -1,4 +1,4 @@
-pandoc --listings -H code-block.tex --highlight-style=espresso -o ./dist/JavaScript.epub Cover.md \
+pandoc --toc -s -o ./dist/JavaScript.epub metadata.txt \
  Chapter1.md \
  Chapter2.md \
  Chapter3.md \
@@ -8,7 +8,7 @@ pandoc --listings -H code-block.tex --highlight-style=espresso -o ./dist/JavaScr
  Chapter7.md
 
 
-pandoc -o ./dist/JavaScript.html Cover.md \
+pandoc --toc -s -o ./dist/JavaScript.html metadata.txt \
  Chapter1.md \
  Chapter2.md \
  Chapter3.md \
