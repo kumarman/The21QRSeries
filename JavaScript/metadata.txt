@@ -1,0 +1,17 @@
+---
+title:
+- type: main
+  text: JavaScript
+- type: subtitle
+  text: 21 Question Refresher
+creator:
+- role: author
+  text: Manoj Kumar
+identifier:
+rights: © 2019 Manoj Kumar
+ibooks:
+  version: 1.0.0
+language: en-US
+stylesheet: manojstyle.css
+cover-image: images/HowJSWorks_2.png
+...

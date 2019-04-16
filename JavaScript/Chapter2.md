@@ -1,22 +1,22 @@
 # Declaration & Data Types? {#chapter2 .chapter}
 
-A variable is declared in JavaScript using var, let or const.
+A variable is declared in JavaScript using var, let or const. let and const follow block, local and global scope. var follows local or function and global scope only.
 
-```prettyprint
-//Declaration
-var myVarWithoutInitialize;
-var myVarWithInitialize = 'SomeValue';
+```js
+var varWithoutInitialize;
+var varWithInitialize = 'SomeValue';
 var myBoolean = true;
 if (myBoolean) {
-	let localBlockScoped 
-			= 'I am available inside the current if block';
+	let blockScoped = 'Inside if block';
 	var iDoNotFollowBlockScope 
-			= 'I am also available outside the if block';
+						= 'Available outside the if block';
 	const iCanNotBeReassigned 
-			= 'I am final. Also available within the block only';
+			= 'I can not change';
 	// This throws error
-	//iCanNotBeReassigned = 'I want to change';
+	iCanNotBeReassigned = 'I want to change';
 }
-//This would print the value defined inside if block
+//Prints the value defined inside if block
 console.log(iDoNotFollowBlockScope);
+//this throws error
+console.log(blockScoped);
 ```
