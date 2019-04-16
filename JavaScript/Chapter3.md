@@ -3,7 +3,6 @@
 There are three types of equality.
 
 ```js
-
 var plusZero = 0; //+ve sign 
 var minusZero = - 0; // zero with -ve sign
 var blank = ' '; //A blank space string

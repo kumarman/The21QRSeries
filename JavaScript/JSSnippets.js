@@ -85,30 +85,33 @@ var equality = () => {
 
 	var iAmDecider = true;
 	if (iAmDecider) {
-		console.log('I was allowed by decider. -:)');
+		console.log('iAmDecider is true');
 	} else {
-		console.log('When if block executes, I can relax -:)');
+		console.log('iAmDecider is false');
 	}
-	var iWasPrintedThisManyTimes = 0;
-	//do-while
-	do {
-		console.log('I have to keep printing until iAmDecider is false');
-		iWasPrintedThisManyTimes++; //I'll be increamented by 1
-		//I do not want to keep printing after 5 times
-		if (iWasPrintedThisManyTimes >= 5) iAmDecider = false;
-	} while (iAmDecider);
+
+
 	//while
+	var repeat = 0;
 	iAmDecider = true;
-	iWasPrintedThisManyTimes = 0;
+	repeat = 0;
 	while (iAmDecider) {
-		console.log('I have to keep printing until iAmDecider is false');
-		iWasPrintedThisManyTimes++; //I'll be increamented by 1
-		//I do not want to keep printing after 5 times
-		if (iWasPrintedThisManyTimes >= 5) iAmDecider = false;
+		console.log('iAmDecider is true');
+		repeat++; //increaments by 1
+		//iAmDecider changed to false after 5 times
+		if (repeat >= 5) iAmDecider = false;
 	}
+	//do-while, always executes atleast once
+	do {
+		console.log('iAmDecider is true');
+		repeat++; //I'll be increamented by 1
+		//I do not want to keep printing after 5 timess
+		if (repeat >= 5) iAmDecider = false;
+	} while (iAmDecider);
+
 	//for
-	for (var thisManyTimes = 5; thisManyTimes >= 0; thisManyTimes--) {
-		console.log('I\'ll be printed ' + thisManyTimes);
+	for (var times = 5; times >= 0; times--) {
+		console.log('I\'ll be printed ' + times);
 	}
 
 	//Switch
