@@ -18,3 +18,4 @@ pandoc --toc -s -o ./dist/JavaScript.html metadata.txt \
  Chapter7.md
 
 
+header-includes: <link rel="stylesheet" href="./../manojstyle.css">

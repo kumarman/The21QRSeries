@@ -7,32 +7,43 @@
  * Declaration and Data Type
  */
  //TRY TO WRITE WITH MAX LINE WIDTH OF 55
-var dataType = function() {
+var dataType = () => {
 	"use strict";
 
-	//Declaration
-	var myVarWithoutInitialize;
-	var myVarWithInitialize = 'SomeValue';
-
+	var varWithoutInitialize;
+	var varWithInitialize = 'SomeValue';
 	var myBoolean = true;
 	if (myBoolean) {
-		let localBlockScoped = 'I am available inside the current if block';
-		var iDoNotFollowBlockScope = 'I am also available outside the if block';
-		const iCanNotBeReassigned = 'I am final. Also available within the block only';
-		//iCanNotBeReassigned = 'I want to change'; // This throws error
+		let blockScoped = 'Inside if block';
+		var iDoNotFollowBlockScope 
+					= 'Available outside the if block';
+		const iCanNotBeReassigned 
+					= 'I can not change';
+		// Error: Assignment to constant variable
+		iCanNotBeReassigned = 'I want to change';
 	}
-	//This would print the value defined inside if block
+	//Error: blockScoped is not defined
+	console.log(blockScoped);
+	//Prints the value defined inside if block
 	console.log(iDoNotFollowBlockScope);
-
 	//Data types
-	let iAmANumber = 2; // type = number. Between -(2^^53 -1) and 2^^53 -1
-	let iAmString = 'Example String'; // type = string
-	let iAmBoolean = true; // type = boolean
-	let iAmNull = null; // special value to say value is absent for the var
-	let iAmUndefined = undefined; // type = undefined
-	let iAmObject = { 'iAmKey': 'iAmValue' }; // type = object
-	let iAmNaN = NaN; //Not a number
-	let iAmSymbol = Symbol("ID");//type = Symbol. new in ECMAScript 6
+
+	//type = number. Between -(2^53 -1) and 2^53 -1
+	let iAmANumber = 2; 
+	//type = string
+	let iAmString = 'Example String'; 
+	//type = boolean
+	let iAmBoolean = true; 
+	// type = object, value is absent for the var
+	let iAmNull = null; 
+	//type = undefined
+	let iAmUndefined = undefined; 
+	//type = object
+	let iAmObject = { 'iAmKey': 'iAmValue' }; 
+	//type = number. Not a number
+	let iAmNaN = NaN; 
+	//type = Symbol. new in ECMAScript 6
+	let iAmSymbol = Symbol('ID');
 
 };
 /**
@@ -40,24 +51,30 @@ var dataType = function() {
  */
 var equality = () => {
 	'use strict';
+	//double equal
+	var plusZero = 0; //+ve sign 
+	var minusZero = - 0; // zero with -ve sign
+	var blank = ' '; //A blank space string
 
-	var iAmComparedWith = 0; // zero with +ve sign or no sign
-	var iAmThatWith = - 0; // zero with -ve sign
-	//Abstract Equality Comparison / Loose equality / double equal
-	console.log(iAmComparedWith == iAmThatWith); //prints true
+	//Abstract equality
+	console.log(plusZero == minusZero); // true
+	console.log(plusZero == blank); //prints true
+	console.log(NaN == NaN); // prints false
+
 	//Strict Equality Comparison / Tripple equal
-	console.log(iAmComparedWith === iAmThatWith); // prints true
-	// SameValue comparison:
-	//It's same as triple equality except for +0, -0 and NaN
-	console.log(Object.is(iAmComparedWith, iAmThatWith)); //prints false
-
-	iAmThatWith = ' '; //A blank space string
-	console.log(iAmComparedWith == iAmThatWith); //prints true
-	console.log(iAmComparedWith === iAmThatWith); // prints true
-	console.log(Object.is(iAmComparedWith, iAmThatWith)); //prints false
-
+	console.log(plusZero === minusZero); // true
+	console.log(plusZero === blank); // prints true
 	console.log(NaN === NaN); // prints false
-	console.log(Object.is(NaN, NaN)); //prints true
+
+	// SameValue comparison:
+	//Same as triple equal except for +0, -0 and NaN
+	console.log(Object.is(plusZero, minusZero)); //false
+	console.log(Object.is(NaN, NaN)); // true
+	console.log(Object.is(plusZero, blank)); // false
+
+
+	//Abstract Equality Comparison / Loose equality / double equal
+
 };
 
 /**
@@ -240,12 +257,12 @@ var objectAndJSON = () => {
 
 };
 
-// dataType();
+dataType();
 // equality();
 // controlFlow();
 // stringManipulation();
 // writingFunctions();
-objectAndJSON();
+//objectAndJSON();
 // arryManipulation();
 /**
  * Working with Arrays

@@ -5,18 +5,22 @@ body {
   font-family: OpenSans;
   line-height: 1.75;
 }
-code { 
+/*code { 
   font-family: monospace; 
   background-color: #f6f8fa;
   font-size: 0.90em;
   display: block;
   padding: 10px;
-}
+}*/
 
-pre {
-  white-space: pre;
+.sourceCode .javascript {
+  /*white-space: pre;*/
   white-space: pre-wrap;
   word-wrap: break-word;
+  background-color: #f6f8fa;
+  font-size: 0.90em;
+  display: block;
+  padding: 10px;
 }
 
 h1 { text-align: left; color: #333; }
