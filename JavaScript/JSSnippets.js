@@ -181,8 +181,6 @@ var stringManipulation = () => {
 	console.log('Substr String = ' + substrFromM2Length);
 };
 
-stringManipulation();
-
 /**
  * Functions
  */
@@ -198,7 +196,7 @@ var writingFunctions = () => {
 	}
 	//Named function with optional parameter
 	//In error trace name of the function would appear
-	var dividerFunction = function iAmDivideFunction(iAmParam1, iAmParam2 = 1) {
+	function iAmDivideFunction(iAmParam1, iAmParam2 = 1) {
 		return (iAmParam1 / iAmParam2);
 	};
 
@@ -215,29 +213,32 @@ var writingFunctions = () => {
 	//Compact arrow function with single parameter
 	var iAmSquareFunction = iAmParam => (iAmParam * iAmParam);
 	//IIFE: immediately invoked function expression
-	(function(){
+	(function() {
 		//I am a function which executes immediately after declaration
 		console.log('I hate waiting, and execute immediately.');
 	}());
 
-
+	//using arrow
+	(() => {
+		console.log('I also execute immediately');
+	})();
 
 	console.log(iAmSubstractFunction2(20, 10));
-	console.log(dividerFunction(20, 10));
+	console.log(iAmDivideFunction(20, 10));
 	console.log(iAmSquareFunction(20));
 
 	//GENERATOR FUNCTION
-	function * nextEvenNumber() {
+	function * evenNumberGenerator() {
 		var evenNumber = 0;
 		while (evenNumber <= 8) {
 			yield evenNumber+=2;
 		}
 	}
 	//creating instance of the generator function
-	var evenNumberGenerator = nextEvenNumber();
+	var newGenerator = evenNumberGenerator();
 
 	for (var i = 10; i > 0; i--) {
-		var genEvenNum = evenNumberGenerator.next();
+		var genEvenNum = newGenerator.next();
 		if (!genEvenNum.done) {
 			console.log('Generated even number = ' + genEvenNum.value);
 		} else {
@@ -247,6 +248,8 @@ var writingFunctions = () => {
 	}
 
 };
+
+writingFunctions();
 
 /**
  * Working with object and JSON
