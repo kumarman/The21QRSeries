@@ -142,36 +142,46 @@ var stringManipulation = () => {
 	console.log('=============== STRING MANIPULATION ===============')
 
 	//Adding multiple string. Mehak is my daughter
-	var addedString = 'Add Mehak, ' + 'me too.';
+	var addedString = 'Add Mehak, ' + 'Aayan too.';
 	//geting length
-	var lengthOfStr = addedString.length;//18
+	var lengthOfStr = addedString.length;//21
+
+	var partialStr = 'a';
 	//Geting index of a partial string. index is counted starting from 0
-	var indexPostionOfMe1st = addedString.indexOf('me'); //11
+	var indexPostion1st = addedString.indexOf(partialStr); //11
 	//Getting last position of a partial string
-	var indexPostionOfMeLast = addedString.lastIndexOf('me');//11
+	var indexPostionLast = addedString.lastIndexOf(partialStr);//11
 	//finding index for a RegExp. /(mehak|me)/i is a regexp
-	var indexPositionSearch = addedString.search(/(mehak|me)/i);//3
+	var indexPositionSearch 
+			= addedString.search(/(mehak|aayan)/i);//3
 	//Using replace gives 'Add Manoj, me too.'
-	var stringAfterReplacing = addedString.replace(/(mehak|me)/i, 'Manoj');
+	var replaceFirst = 
+		addedString.replace(/(mehak|aayan)/i, 'Kid');
+	var replaceAll = 
+			addedString.replace(/(mehak|aayan)/ig, 'Kid');
 	//substring fromIndex to toIndex
 	var substringFromM2N = addedString.substring(4, 9);//Mehak
 	//substr fromIndex to toLength. It can take -ve parameter meaning index from end
-	var substrFromM2Length = addedString.substr(4);//Mehak, me too.
-	substrFromM2Length = addedString.substr(4, 4);//Meha
+	var substrFromIndex = addedString.substr(-4);//Mehak, me too.
+	var substrFromM2Length = addedString.substr(4, 5);//Mehak
 	//Slice a string. Slice can take -ve parameter meaning index from end
-	var sliceFromM2N = addedString.slice(4, 9);//Mehak
-	sliceFromM2N = addedString.slice(-14, -9);//Mehak
+	var sliceFromM2N1 = addedString.slice(4, 9);//Mehak
+	var sliceFromM2N2 = addedString.slice(-10, -5);//Mehak
 
 	console.log('Length of \'' + addedString + '\' = ' + lengthOfStr);
-	console.log('1st index of me in the addedString = ' + indexPostionOfMe1st);
-	console.log('Last index of me in the addedString = ' + indexPostionOfMeLast);
-	console.log('1st index of Mehak or me in the addedString ignoring case = ' + indexPositionSearch);
-	console.log('String after replace = \'' + stringAfterReplacing + '\'');
-	console.log('Sliced String = ' + sliceFromM2N);
+	console.log('1st index of ' + partialStr + ' in the addedString = ' + indexPostion1st);
+	console.log('Last index of ' + partialStr + ' in the addedString = ' + indexPostionLast);
+	console.log('1st index of Mehak or Aayan in the addedString ignoring case = ' + indexPositionSearch);
+	console.log('String after replace = \'' + replaceFirst + '\'');
+	console.log('String after replace all = \'' + replaceAll + '\'');
+	console.log('Sliced String1 = ' + sliceFromM2N1);
+	console.log('Sliced String2 = ' + sliceFromM2N2);
 	console.log('Substring String = ' + substringFromM2N);
+	console.log('Substr String from index = ' + substrFromIndex);
 	console.log('Substr String = ' + substrFromM2Length);
 };
 
+stringManipulation();
 
 /**
  * Functions
@@ -260,13 +270,6 @@ var objectAndJSON = () => {
 
 };
 
-dataType();
-// equality();
-// controlFlow();
-// stringManipulation();
-// writingFunctions();
-//objectAndJSON();
-// arryManipulation();
 /**
  * Working with Arrays
  */

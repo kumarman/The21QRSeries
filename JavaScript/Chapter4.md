@@ -33,7 +33,7 @@ var repeat = 0;
 do {
 	console.log('iAmDecider is true');
 	repeat++; //I'll be increamented by 1
-	//I do not want to keep printing after 5 times
+	//I do not want to print after 5 times
 	if (repeat >= 5) iAmDecider = false;
 } while (iAmDecider);
 ```
@@ -57,10 +57,10 @@ switch (color) {
 	case 'Blue':
 		console.log('Value of color is Blue');
 		break;
-	case 'Green': //as color is Green.
+	case 'Green': //as color = Green.
 		//This case to be executed
-		console.log('Thank you switch controller.');
-	//I'll keep executing things until I find break
+		console.log('Thank you switch.');
+	//keep executing untill it finds `break` or end
 	default: //I am optional
 		console.log('I am default');
 }

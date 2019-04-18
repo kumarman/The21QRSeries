@@ -17,15 +17,15 @@ console.log(plusZero === minusZero); // true
 console.log(plusZero === blank); // prints true
 console.log(NaN === NaN); // prints false
 
-// SameValue comparison:
+//SameValue comparison:
 //Same as triple equal except for +0, -0 and NaN
 console.log(Object.is(plusZero, minusZero)); //false
-console.log(Object.is(NaN, NaN)); // true
-console.log(Object.is(plusZero, blank)); // false
+console.log(Object.is(NaN, NaN)); //true
+console.log(Object.is(plusZero, blank)); //false
 ```
 
 1. Double Equality or Abstract Equality Comparison or Loose Equality:  
-	 It compares two values by converting them to a common type.  
+	 It compares two values by converting them to a common type. We should always use tripple equality.
 2. Strict Equality Comparison or Tripple Equality:  
    It compares type and value both. If either type or value is different, false is returned.
 3. Same-value Equality:  
