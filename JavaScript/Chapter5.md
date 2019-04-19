@@ -23,6 +23,7 @@ Finding position using RegExp
 var indexPositionSearch 
     = addedString.search(/(mehak|aayan)/i);//4
 ```
+
 Replacing string using RegExp
 ```js
 var replaceFirst = 
@@ -32,14 +33,16 @@ var replaceAll =
 		addedString.replace(/(mehak|aayan)/ig, 'Kid');
 // replaceAll = 'Add Kid, Kid too.'
 ```
-Substring  
-
+Substring using `substring` function
 ```js
 //substring fromIndex to toIndex
 //substring does not take -ve argument
 var substrFromM2Nindex 
 			= addedString.substring(4, 9);//Mehak
+```
 
+Substring using `substr`
+```js
 //substr and slice can take -ve argument
 //-ve argument means counting from end
 var substrFromIndex = addedString.substr(-4);
@@ -47,7 +50,10 @@ var substrFromIndex = addedString.substr(-4);
 //substr fromIndex to toLength			
 var substrFromM2Length = addedString.substr(4, 5);
 //substrFromM2Length = 'Mehak'
+```
 
+Substring using `slice`
+```js
 //Slicing string from fromIndex to toIndex
 var sliceFromM2N = addedString.slice(4, 9);//Mehak
 var oneMoreEx = addedString.slice(-10, -5);//Aayan
