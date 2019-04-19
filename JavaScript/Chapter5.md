@@ -21,7 +21,7 @@ Finding position using RegExp
 ```js
 // i means case insensitive
 var indexPositionSearch 
-			= addedString.search(/(mehak|aayan)/i);//4
+    = addedString.search(/(mehak|aayan)/i);//4
 ```
 Replacing string using RegExp
 ```js
