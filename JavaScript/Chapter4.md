@@ -1,6 +1,6 @@
 # Control flow (if, while and for) syntax? {#cahper4 .chapter}
 
-* `if` block
+`if` block
 
 ```js
 var iAmDecider = true;
@@ -11,7 +11,7 @@ if (iAmDecider) {
 }
 ```
 
-* `while` loop
+`while` loop
 
 ```js
 var repeat = 0;
@@ -24,7 +24,7 @@ while (iAmDecider) {
 }
 ```
 
-* `do-while` loop
+`do-while` loop
 
 ```js
 var iAmDecider = true;
@@ -38,7 +38,7 @@ do {
 } while (iAmDecider);
 ```
 
-* `for` loop
+`for` loop
 
 ```js
 for (var times = 5; times >= 0; times--) {
@@ -46,7 +46,7 @@ for (var times = 5; times >= 0; times--) {
 }
 ``` 
 
-* `switch`
+`switch`
 
 ```js
 var color = 'Green';
