@@ -7,7 +7,6 @@ pandoc --toc -s --highlight-style kate -o ./dist/JavaScript.epub metadata.txt \
  Chapter6.md \
  Chapter7.md
 
-//
 
 pandoc --toc -s -o ./dist/JavaScript.html metadata.txt \
  Chapter1.md \
