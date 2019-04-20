@@ -249,8 +249,6 @@ var writingFunctions = () => {
 
 };
 
-writingFunctions();
-
 /**
  * Working with object and JSON
  */
@@ -259,24 +257,29 @@ var objectAndJSON = () => {
 	console.log('=============== OBJECTS AND JSON ===============')
 
 	//This is a JSON Object
-	var iAmJSON = {iAmSimpleKey: 'iAmValue', iAmListKey: ['var1', 'var2']};
+	var iAmJSON = {
+		   simpleKey: 'iAmValue', 
+		   listKey: ['var1', 'var2']
+		 };
 	//Converting a JSON Object to printable text/string
-	//{"iAmSimpleKey":"iAmValue","iAmListKey":["var1","var2"]}
+	//{"simpleKey":"iAmValue","listKey":["var1","var2"]}
 	var iAmJSONString = JSON.stringify(iAmJSON);
 	//Convert a JSON String to object
 	var iAmBackToObject = JSON.parse(iAmJSONString);
 	//Value from object can be extracted using these two ways
-	var valueCorrespondingToKey = iAmBackToObject.iAmSimpleKey; // iAmValue
-	var iAmDynamicKey = 'iAmSimpleKey';
-	var valueCorrespondingToKeyDynamic = iAmBackToObject[iAmDynamicKey]; // iAmValue
+	var valueForKey = iAmBackToObject.simpleKey;
+	var dynaKey = 'listKey';
+	var valueForDynaKey = iAmBackToObject[dynaKey][0];
 
-
+	console.log(iAmJSONString);
+	console.log(valueForKey);
+	console.log(valueForDynaKey);
 };
-
+objectAndJSON();
 /**
  * Working with Arrays
  */
-var arryManipulation = () => {
+var arrayManipulation = () => {
 	'use strict';
 	console.log('=============== ARRAY MANIPULATION ===============')
 
