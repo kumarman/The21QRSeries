@@ -11,7 +11,7 @@ Finding length of an array. Getting and replacing object at an index. Index star
 ```js
 //Getting the value
 var element = anArray[3];
-//item and index 3 is a function
+//item at index 3 is a function
 var result = element(); // result = 'abcd'
 //Changing the value
 anArray[0] = 32;
@@ -40,7 +40,7 @@ Adding multiple elements at the end of array
 ```js
 var names = ['John', 'Michel'];
 var concatArray = names.concat('Rakesh', 'Mahesh');
-//[ 'John', 'Michel', 'Rakesh', 'Mahesh' ]
+//concatArray=[ 'John', 'Michel', 'Rakesh', 'Mahesh' ]
 ```
 Using split, join and reverse
 ```js
