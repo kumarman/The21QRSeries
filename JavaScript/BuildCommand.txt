@@ -1,12 +1,25 @@
 pandoc --toc -s --highlight-style kate -o ./dist/JavaScript.epub metadata.txt \
- Chapter1.md \
- Chapter2.md \
- Chapter3.md \
- Chapter4.md \
- Chapter5.md \
- Chapter6.md \
- Chapter7.md
-
+Chapter1.md \
+Chapter2.md \
+Chapter3.md \
+Chapter4.md \
+Chapter5.md \
+Chapter6.md \
+Chapter7.md \
+Chapter8.md \
+Chapter9.md \
+Chapter10.md \
+Chapter11.md \
+Chapter12.md \
+Chapter13.md \
+Chapter14.md \
+Chapter15.md \
+Chapter16.md \
+Chapter17.md \
+Chapter18.md \
+Chapter19.md \
+Chapter20.md \
+Chapter21.md
 
 pandoc --toc -s -o ./dist/JavaScript.html metadata.txt \
  Chapter1.md \

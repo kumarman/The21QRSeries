@@ -275,26 +275,26 @@ var objectAndJSON = () => {
 	console.log(valueForKey);
 	console.log(valueForDynaKey);
 };
-objectAndJSON();
+//objectAndJSON();
 /**
  * Working with Arrays
  */
 var arrayManipulation = () => {
 	'use strict';
 	console.log('=============== ARRAY MANIPULATION ===============')
-
-	var kindlySplitMe = 'I will show you how to split long string';
+	//Declaration of an array
+		var anArray = [23, 'abc', 
+							{ a: 123, b: 'qwert'},
+							() => 'abcd'];
+	var kindlySplitMe = 'How to split long string';
 	//.split(' ').reverse().join(' ').split('').reverse().join('');
 	console.log(kindlySplitMe.split(' ').reverse().join(', '));
+
+	console.log(kindlySplitMe.split(' ').reverse().join(' ').split('').reverse().join(''));
+
+	console.log(anArray[3]());
 };
-
-/**
- * How to write functions
- */
-(function() {
-	'use strict';
-
-}());
+arrayManipulation();
 
 /**
  * Scopes in JavaScript
