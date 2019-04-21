@@ -285,14 +285,57 @@ var arrayManipulation = () => {
 	//Declaration of an array
 		var anArray = [23, 'abc', 
 							{ a: 123, b: 'qwert'},
-							() => 'abcd'];
+              () => 'abcd'];
+    //get partial array from begin index to end index
+    var copyArray = anArray.slice(0, 3);
+
+    var spliceArray = anArray.splice();
+
+    anArray.concat({abd: 123});
+
+    copyArray[0] = 12;
+		//Getting the value
+		var element = anArray[3]; 
+		//Changing the value
+		anArray[0] = 32;
+    var currentLength = anArray.length; //4 
+    var names = ['John', 'Michel'];
+    
+    var lengthNew = names.unshift('Ramesh');
+
+    var firstName = names.shift();
+
+	var drinks = [];
+	//ADD or REMOVE from end of array
+	var lengthAfterAdd = drinks.push('Brandy');
+	//lengthAfterAdd = 1
+	lengthAfterAdd = drinks.push('Rum');
+	//Now lengthAfterAdd = 2
+	var removedElement = drinks.pop();
+	//removedElement = 'Rum'; drinks = ['Brandy']
+	var currentLength = drinks.length; // 1
 	var kindlySplitMe = 'How to split long string';
 	//.split(' ').reverse().join(' ').split('').reverse().join('');
 	console.log(kindlySplitMe.split(' ').reverse().join(', '));
 
 	console.log(kindlySplitMe.split(' ').reverse().join(' ').split('').reverse().join(''));
 
-	console.log(anArray[3]());
+  console.log(anArray[3]());
+  
+  var concatArray = names.concat('Rakesh', 'Mahesh');
+  console.log(concatArray);
+  var drinks = ['Rum', 'Martini', 'Malibu'];
+var copyDrinks = drinks.slice(); //a new copy
+var partialCopy = drinks.slice(1, 3);
+console.log(partialCopy);
+
+var alphabets = ['A', 'B', 'C', 'D', 'E', 'F'];
+//delete 3 elements starting with index 1
+//B, C, D to be deleted
+var deletedAlphabets = alphabets.splice(1, 3);
+console.log(alphabets);
+console.log(deletedAlphabets);
+
 };
 arrayManipulation();
 
