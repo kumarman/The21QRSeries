@@ -337,22 +337,22 @@ console.log(alphabets);
 console.log(deletedAlphabets);
 
 };
-arrayManipulation();
+//arrayManipulation();
 
 /**
  * Scopes in JavaScript
  */
 (function() {
 	'use strict';
-
 }());
 
 /**
  * Error handling
  */
 (function() {
-	'use strict';
-
+  eval('var varInEval = 12;');
+  console.log(varInEval);
+  console.log(this);
 }());
 
 /**
@@ -360,7 +360,9 @@ arrayManipulation();
  */
 (function() {
 	'use strict';
-
+  function withDuplicateParamName(param, param){
+    console.log(param);
+  }
 }());
 
 /**
