@@ -1,75 +1,23 @@
-# What is strict mode?
+# What is `this` keyword?
 
-Strict mode in JS means strict operating context. It can be enabled by putting 'use strict' at the top of the file or at the top of a function.
-```js
-'use strict';
-//other functions and variables
+`this` = the context object in which the code executes.  
+The value of `this` could be different depending on how the code is executed.  
+The default context in non-strict mode is object `window` in browser or object `global` in node. In strict mode the default context is `undefined`.
 
-//To enable only for a particular function
-function(param){
-  'use strict';
-  //Now only this function is in strict mode
-}
-```
-Strict mode has the following effect on the code execution:
+```js
+console.log(this);
+//In non-strict mode this = window object
+//In strict mode this = undefined
+var testThis = {
+  someKey: 'someValue',
+  printThis: function() {console.log(this)}
+};
 
-1. Variable can not be used without declaration.
-```js
-(() => {
-  'use strict';
-  undeclaraedVar = 'someValue'; //Not allowed
-  //undeclaraedVar is not defined
-}());
+testThis.printThis();
+//In above case context is testThis object so this = testThis
+var printThisFunction = testThis.printThis;
+printThisFunction();
+//printThisFunction is executing in main context 
+//so this = window or undefined depending on strict mode
 ```
-
-2. Not possible to use reserved keywords as variable names. e.g. `let`, `const`, `var` etc.
-```js
-(() => {
-  'use strict';
-  var eval = 'someValie'; //Not allowed
-  //Unexpected strict mode reserved word
-}());
-```
-3. `delete` of `var`, `function` and `function` arguments is not allowed.
-```js
-(() => {
-  'use strict';
-  var toBeDeleted = 'TryDeletingMe';
-  var aFunction = () => 'JustString';
-  delete toBeDeleted; // Not allowed
-  delete aFunction; // Not allowed
-  //Delete of an unqualified identifier in strict mode.
-  
-}());
-```
-4. variables defined inside `eval` are not available outside of the `eval`.
-```js
-(() => {
-  'use strict';
-  eval('var varInEval = 12;');
-  console.log(varInEval);
-  //Error: varInEval is not defined
-  //In non-strict mode it would have printed 12
-}());
-```
-5. The default value of `this` is undefined however in non-strict mode it is window object.
-```js
-(() => {
-  'use strict';
-  console.log(this); //prints indefined
-  //In non-strict mode it prints global window object
-}());
-```
-6. Duplicating parameter in a function is not allowed
-```js
-(() => {
-  'use strict';
-  //Not allowed
-  function withDuplicateParamName(param, param) {
-    console.log(param);
-  }
-  //Duplicate parameter name not allowed in this context
-}());
-```
-
-It is always recommended to use strict mode.
+**Note: The above behavior would change if printThis function is defined using arrow(=>) function**.

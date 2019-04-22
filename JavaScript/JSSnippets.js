@@ -343,16 +343,25 @@ console.log(deletedAlphabets);
  * Scopes in JavaScript
  */
 (function() {
-	'use strict';
+  'use strict';
+  
 }());
 
 /**
  * Error handling
  */
 (function() {
-  eval('var varInEval = 12;');
-  console.log(varInEval);
-  console.log(this);
+  'use strict';
+  var testThis = {
+    someKey: 'someValue',
+    printThis: function() {console.log(this)}
+  };
+  
+  testThis.printThis();
+  
+  var printThisFunction = testThis.printThis;
+  
+  printThisFunction();
 }());
 
 /**
@@ -360,7 +369,7 @@ console.log(deletedAlphabets);
  */
 (function() {
 	'use strict';
-  function withDuplicateParamName(param, param){
+  function withDuplicateParamName(param){
     console.log(param);
   }
 }());
