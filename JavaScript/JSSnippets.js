@@ -369,9 +369,7 @@ console.log(deletedAlphabets);
  */
 (function() {
 	'use strict';
-  function withDuplicateParamName(param){
-    console.log(param);
-  }
+
 }());
 
 /**
@@ -395,5 +393,4 @@ console.log(deletedAlphabets);
  */
 (function() {
 	'use strict';
-
 }());

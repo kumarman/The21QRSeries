@@ -22,7 +22,7 @@ console.log(iDoNotFollowBlockScope);
 ```
 **`var`**:	var is used to declare a variable optionally to initialise to a value. Variables defined using var keyword inside a for, if or while block would be available outside the block scope also.
 
-**`let`**: let is exactly similar as var except that a variable declared using let inside a for, if or while block wouldn’t be available outside the block scope. 
+**`let`**: A variable declared using let inside a for, if or while block wouldn’t be available outside the block scope. 
 
 **`const`**: As the name suggests, const is used to define a read only variable which can not be re-assigned to any other value. Just like let, const is also not available outside the block scope if defined in a block.
 
