@@ -340,14 +340,6 @@ console.log(deletedAlphabets);
 //arrayManipulation();
 
 /**
- * Scopes in JavaScript
- */
-(function() {
-  'use strict';
-  
-}());
-
-/**
  * Error handling
  */
 (function() {
@@ -365,32 +357,99 @@ console.log(deletedAlphabets);
 }());
 
 /**
- * strict mode
+ * closure in java script
  */
 (function() {
-	'use strict';
+  'use strict';
+  function variableHoldingFunction(){
+    var closureCandidate = 'Hello Geeks';
+    return function() {
+      console.log(closureCandidate);
+    };
+  }
+  var closureFunc = variableHoldingFunction();
+  //closureCandidate no more available in scope
+  //It is stored in Closure scope
+  closureFunc();
+
+
+  var globalObj = {};
+  function returnFunctionWithClosure() {
+    //store globalObj in local var
+    var localRef = globalObj;
+    localRef.test = 'Function Scope';
+    return function() {
+      console.log(localRef.test);
+    };
+  }
+  var closureWithGlobalRef 
+          = returnFunctionWithClosure();
+  globalObj.test = 'Gobal Scope';
+  closureWithGlobalRef();
 
 }());
 
-/**
- * scope chain
- */
-(function() {
-	'use strict';
+/** call bind and apply */
+(function(){
+'use strict';
+function thisLogger(comment) {
+console.log(comment + ', this=' + this);
+}
+var myThis = 'myThis';
+//I am fixing the value of this as myThis
+//I can send any value including primitive
+thisLogger.call(myThis, 'Sent my this');
+//apply is exactly same except the parameters
+//are passed as single array argument
+thisLogger.apply(myThis, ['Sent my this']);
+
+var myThis = 'myThis';
+var fixedThis = function fixedThis(){
+  console.log(this)
+}.bind(myThis);
+//The value is this is now fixed to myThis
+fixedThis(); //print 'myThis'
+//Sending new value of this does not change it
+fixedThis.call('changedThis'); //print 'myThis'
+fixedThis.apply('changedThis'); //print 'myThis'
 
 }());
 
-/**
- * IIFE - Immediately Invoked Function Expression
- */
-(function() {
-	'use strict';
-
+/** Class */
+(function(){
+  'use strict';
+  var Person = (function(){
+    function Person(name, salutation = 'Mr.') {
+      this.name = name;
+      this.salutation = salutation;
+    }
+    Person.prototype.getName = function(){
+      return this.name
+    };
+    Person.prototype.greet = function() {
+      console.log(`Hello ${this.salutation} ${this.name}`);
+    };
+    return Person;
+  }());
+  
+  var manoj = new Person('Manoj');
+  manoj.greet();
 }());
 
-/**
- * hoisting in java script
- */
-(function() {
-	'use strict';
+(function(){
+  'use strict';
+  class Person {
+    constructor(name, title='Mr.'){
+      this.name = name;
+      this.title = title;
+    }
+    greet() {
+      console.log(`Hello ${this.title} ${this.name}`);
+    }
+  }
+  
+  let manoj = new Person('Manoj');
+  manoj.greet();
+  
 }());
+

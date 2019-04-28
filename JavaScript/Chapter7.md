@@ -28,3 +28,15 @@ var dynaKey = 'listKey';
 var valueForDynaKey = iAmBackToObject[dynaKey][0];
 //valueForDynaKey = 'var1'
 ```
+Iterate over keys in a JSON.
+```js
+var iAmJSON = { 
+  simpleKey: 'iAmValue', 
+  listKey: ['var1', 'var2'] 
+};
+
+for (let key in iAmJSON){
+  console.log(iAmJSON[key]);
+  //prints iAmValue, [ 'var1', 'var2' ]
+}
+```

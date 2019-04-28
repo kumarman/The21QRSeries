@@ -2,7 +2,7 @@
 
 A variable defined with `var` and a `function` can be used before it is declared.
 ```js
-hositedExecute();
+hositedExecute(); //defined later
 function hositedExecute(){
   console.log('In hositedExecute function');
 }
@@ -33,7 +33,7 @@ tranforms to
 var aVariable; //declaration shifted to top
 //Full function moved to top
 function anyFunction() {
-  //exactly same happes inside a function too
+  //exactly same happens inside a function too
   var aVariable;
   var localFunction;
   console.log('anyFunction executed ');

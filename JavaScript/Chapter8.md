@@ -67,3 +67,5 @@ var deletedAlphabets = alphabets.splice(1, 3);
 // deletedAlphabets = [ 'B', 'C', 'D' ]
 // alphabets = [ 'A', 'E', 'F' ]
 ```
+
+SPREAD OPERATOR TO BE DONE
