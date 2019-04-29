@@ -1,43 +1,41 @@
-'use strict';
-//Creating a custom error
-let customError1 = new Error('Custom Error');
-let customError2 = Error('Custom Error');
-//both errors have exactly same behavior
+/**
+ * This function returns a promise of even 
+ * number which resolves after 1 sec.
+ * If random number is odd, the promise rejects
+ */
+function randomEven() {
+  let randomResolve 
+    = new Promise((resolve, reject) => {
+    //get a number between 1 & 10 randomly
+    let numberBetween0And9 
+      = Math.floor(Math.random() * 10);
+    //check if the number is even
+    let isEven = (numberBetween0And9 % 2 === 0);
+    //resolve or reject after 1 sec
+    setTimeout(() => {
+      if (isEven) {
+      //resolve if even
+      resolve(numberBetween0And9);
+      } else {
+        //Reeject if odd
+        reject('The number is odd');
+      }
+    }, 1000);
+  });
+  return randomResolve;
+}
+setInterval(function(){
+  var evenNumber = randomEven();
+  evenNumber.then((evenNumber) => {
+    console.log(evenNumber);
+  }).catch((error) => {
+    console.log(error);
+  });
+}, 1000);
+console.log('I\'m not blocked');
 
-//Throwing a custom error
-throw customError1;
-throw(customError2);
-// A simple string can be thrown
-throw 'I am an error';
-throw ('I am an error');
-//A boolean or number also
-throw true;
-throw 6;
 
-function throwsAnError(){
-  //Throw an error message
-  throw('This is an error message');
-}
-function throwsBoolean(){
-  //Throw an error message
-  throw true;
-}
-function createNewError() {
-  var myError = new Error('This is my error');
-  var sameError = Error('This is my error');
-  return sameError;
-}
-
-try {
-  //eval("alert('Hello)");
-  //throwsAnError();
-  //throw(createNewError());
-  throwsBoolean();
-} catch (error) {
-  //Catching an error
-  console.log(error);
-  //console.log(error.message);
-} finally {
-  //Executes always in all cases
-  console.log('Log me in all cases');
-}
+setTimeout(() => {
+  console.log('Executes after 0 ms');
+ }, 0);
+ console.log('Execute on main thread.');

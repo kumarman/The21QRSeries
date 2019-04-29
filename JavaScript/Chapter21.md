@@ -1,1 +1,1 @@
-# Mind bending questions
+# Practice questions?
