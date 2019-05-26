@@ -28,16 +28,16 @@ function randomEven() {
 ```
 Using a function returning `Promise`.
 ```js
+  //evenNumber is a promise which resolves in 1 sec
   var evenNumber = randomEven();
   //catch or then block executes after 1 sec
-  //evenNumber is a promise which resolves in 1 sec
   evenNumber.then((evenNumber) => {
     //In case the Promise resolves
     console.log(evenNumber);
   }).catch((error) => {
-    //In case Promise rejects
+    //In case the Promise rejects
     console.log(error);
   });
   //This prints immediately
-  console.log('I\m not blocked.');
+  console.log('I\'m not blocked.');
 ```

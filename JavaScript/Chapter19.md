@@ -1,1 +1,1 @@
-# What is JSONP?
+How to use rest parameters?
